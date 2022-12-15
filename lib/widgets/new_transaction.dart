@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NewTransaction extends StatefulWidget {
   final Function addTx;
 
-   NewTransaction(this.addTx);
+  NewTransaction(this.addTx);
 
   @override
   State<NewTransaction> createState() => _NewTransactionState();
@@ -21,16 +21,15 @@ class _NewTransactionState extends State<NewTransaction> {
     if (enteredTitle.isEmpty || enteredAmount <= 0) {
       return;
     }
-    
-    widget.addTx(
-           enteredTitle,
-           enteredAmount,
-           ); 
 
+    widget.addTx(
+      enteredTitle,
+      enteredAmount,
+    );
+
+    Navigator.of(context).pop();
   }
 
-
-  
   @override
   Widget build(BuildContext context) {
     return Card(
